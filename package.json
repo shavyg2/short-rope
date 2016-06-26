@@ -25,6 +25,7 @@
     "lodash": "^4.13.1",
     "replace-ext": "0.0.1",
     "request-promise": "^3.0.0",
+    "tmp": "0.0.28",
     "unzip": "^0.1.11"
   },
   "bin": {
