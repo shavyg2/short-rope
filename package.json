@@ -1,7 +1,6 @@
 {
   "name": "short-rope",
   "version": "0.0.1",
-  "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.spec.js"
   },
@@ -29,7 +28,7 @@
     "unzip": "^0.1.11"
   },
   "bin": {
-    "rope": "rope.js"
+    "rope": "bin/rope.js"
   },
   "directories": {
     "test": "test"
