@@ -1,0 +1,45 @@
+{
+  "name": "short-rope",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register test/**/*.spec.js"
+  },
+  "author": "Shavauhn Gabay",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "gulp": "^3.9.1",
+    "gulp-help": "^1.6.1",
+    "mocha": "^2.5.3",
+    "script": "git+https://bitbucket.org/shavyg2/script.git#master"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "chai": "^3.5.0",
+    "extract-zip": "^1.5.0",
+    "glob": "^7.0.5",
+    "is-git-url": "^0.2.3",
+    "lodash": "^4.13.1",
+    "replace-ext": "0.0.1",
+    "request-promise": "^3.0.0",
+    "unzip": "^0.1.11"
+  },
+  "bin": {
+    "rope": "rope.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": "Pull Git Repos into your repo, without messing with git",
+  "keywords": [
+    "git",
+    "clone",
+    "merge",
+    "clean",
+    "rope"
+  ]
+}
