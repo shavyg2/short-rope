@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 
 var _lodash = require("lodash");
@@ -26,8 +27,11 @@ switch (type) {
   case "github":
     Line = _GitHubLine2.default;
     break;
-  default:
+  case "file":
     Line = _FileLine2.default;
+    break;
+  default:
+    console.log("No known interface selected");
 }
 
 var line = new Line(param);

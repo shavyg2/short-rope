@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import _ from "lodash";
 import GithubLine from "../GitHubLine";
 import FileLine from "../FileLine"
@@ -15,8 +16,11 @@ switch (type) {
   case "github":
     Line = GithubLine;
     break;
-  default:
+    case "file":
     Line = FileLine;
+    break;
+  default:
+  console.log("No known interface selected");
 }
 
 
