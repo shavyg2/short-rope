@@ -138,15 +138,24 @@ var FishLineInterface = function () {
       var _this3 = this;
 
       var async_func = (0, _lodash2.default)(this.total_files).map(function (x) {
-        return { from: _path2.default.join(_this3.start, x), to: _path2.default.join(_this3.end, x) };
+        return {
+          from: _path2.default.join(_this3.start, x),
+          to: _path2.default.join(_this3.end, x)
+        };
       }).map(function (x) {
         return function (next) {
           (0, _mkdirp2.default)(_path2.default.dirname(x.to), function (err) {
-            if (err) throw err;
-            var _from = _fs2.default.createReadStream(x.from);
-            var _to = _fs2.default.createWriteStream(x.to);
-            _from.pipe(_to);
-            _from.on("end", next);
+            try {
+              var stat = _fs2.default.statSync(x.from);
+              if (stat.isFile()) {
+                var _from = _fs2.default.createReadStream(x.from);
+                var _to = _fs2.default.createWriteStream(x.to);
+                _from.pipe(_to);
+                _from.on("end", next);
+              }
+            } catch (e) {
+              console.error(e);
+            }
           });
         };
       }).value();
