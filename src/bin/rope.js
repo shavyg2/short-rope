@@ -1,7 +1,8 @@
 #!/usr/bin/env node
+
 import _ from "lodash";
 import GithubLine from "../GitHubLine";
-import FileLine from "../FileLine"
+import FileLine from "../FileLine";
 
 
 
@@ -13,18 +14,19 @@ var param = commands[1];
 
 let Line;
 switch (type) {
-  case "github":
-    Line = GithubLine;
-    break;
+    case "github":
+        Line = GithubLine;
+        break;
     case "file":
-    Line = FileLine;
-    break;
-  default:
-  console.log("No known interface selected");
+        Line = FileLine;
+        break;
+    default:
+        console.log("No known interface selected");
+        process.exit(0);
 }
 
 
 let line = new Line(param);
 line.boot(function() {
-  console.log("Completed");
+    console.log("Completed");
 });
