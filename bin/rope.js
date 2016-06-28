@@ -15,6 +15,10 @@ var _FileLine2 = _interopRequireDefault(_FileLine);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+process.on("uncaughtException", function (e) {
+    console.log(e.stack);
+});
+
 var args = Array.prototype.slice.call(process.argv, 0);
 var commands = (0, _lodash2.default)(args.slice(2)).map(function (x) {
     return x.toLowerCase();

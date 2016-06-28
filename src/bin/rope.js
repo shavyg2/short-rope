@@ -6,6 +6,12 @@ import FileLine from "../FileLine";
 
 
 
+process.on("uncaughtException",function (e) {
+  console.log(e.stack);
+})
+
+
+
 var args = Array.prototype.slice.call(process.argv, 0);
 var commands = _(args.slice(2)).map(x => x.toLowerCase()).value();
 var type = commands[0];
